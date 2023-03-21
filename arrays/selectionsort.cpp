@@ -1,19 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-int main()
-{
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        int n;
-        cin >> n;
-        int inputarr[n];
-        for (int i = 0; i < n; i++)
-        {
-            cin >> inputarr[i];
-        }
+void selection_sort(int inputarr[],int n){
         for (int i = 0; i < n; i++)
         {
             int miniNum = INT_MAX, index;
@@ -28,6 +15,22 @@ int main()
             inputarr[index] = inputarr[i];
             inputarr[i] = miniNum;
         }
+}
+
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int n;
+        cin >> n;
+        int inputarr[n];
+        for (int i = 0; i < n; i++)
+        {
+            cin >> inputarr[i];
+        }
+        selection_sort(inputarr,n);
         for (int i = 0; i < n; i++)
         {
             cout<<inputarr[i]<<" ";
