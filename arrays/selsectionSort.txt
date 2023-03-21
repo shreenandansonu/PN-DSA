@@ -1,0 +1,11 @@
+Selection sort is a simple sorting algorithm that sorts an array by repeatedly finding the minimum element from the unsorted part of the array and putting it at the beginning.
+
+Here's how the algorithm works:
+
+Start with the first element of the array.
+
+Find the minimum element from the remaining elements of the array.
+
+Swap the minimum element with the first element.
+
+Repeat steps 2 and 3 for the remaining unsorted part of the array, until the entire array is sorted.
