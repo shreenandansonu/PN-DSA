@@ -8,11 +8,13 @@ while(t--)
 {
    int n;
    cin>>n;
-   int a[n];
+   int a[n],cs[n+1]={0},csum=0;
    //This loop is to take the input array
    for (int i = 0; i < n; i++)
    {
     cin>>a[i];
+    csum+=a[i];
+    cs[i+1]=csum;
    }
    int maxsum=INT_MIN,lhs=-1,rhs=-1;
    // this loop is to define the starting point
@@ -21,20 +23,13 @@ while(t--)
     // this loop is to define the end of the subarray starting from i index
     for (int j = i; j < n; j++)
     {   
-        int sum=0;
-        // This loop is to print the numbers from the starting and end point
-        for (int k = i; k <= j; k++)
-        {
-            sum+=a[k];
-        }
+        int sum=(cs[j+1]-cs[i]);
         if(maxsum<sum){
             maxsum=sum;
             lhs=i;rhs=j;
         }
         sum=0;
-        
-    }
-    
+    }    
    }
    cout<<maxsum<<endl;
    //priting subarray
