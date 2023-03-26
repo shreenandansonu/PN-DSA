@@ -14,27 +14,35 @@ while(t--)
    {
     cin>>a[i];
    }
-   int sum=0,maxsum=INT_MIN;
+   int maxsum=INT_MIN,lhs=-1,rhs=-1;
    // this loop is to define the starting point
    for (int i = 0; i < n; i++)
    {
     // this loop is to define the end of the subarray starting from i index
     for (int j = i; j < n; j++)
-    {
+    {   
+        int sum=0;
         // This loop is to print the numbers from the starting and end point
         for (int k = i; k <= j; k++)
         {
             sum+=a[k];
         }
-        maxsum=max(sum,maxsum);
+        if(maxsum<sum){
+            maxsum=sum;
+            lhs=i;rhs=j;
+        }
         sum=0;
         
     }
     
    }
    cout<<maxsum<<endl;
-   
-    
+   for (int l = lhs; l <= rhs; l++)
+   {
+    cout<<a[l]<<" ";
+   }
+   cout<<endl;
+      
 }
 return 0;
 }
